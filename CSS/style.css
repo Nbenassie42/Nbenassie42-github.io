@@ -15,9 +15,10 @@ a:hover {
 body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: 'Arial', sans-serif;
     height: 100%;
-    background-color: #eaf4e2;
+    background-color: #E4FFAF;
 }
 
 /* Centrage du contenu dans la page */
@@ -31,7 +32,7 @@ body {
 header {
     top: 0;
     width: 100%;
-    height: 200px;
+    height: 120px;
     background: linear-gradient(to bottom right, #7AC74F, #4CAF50, #a4de88); /* dégradé */
     position: fixed;
     overflow: hidden;
@@ -41,8 +42,8 @@ header {
 /* Style du lien dans le header */
 header a {
     font-size: 5rem;
-    font-family: 'Georgia', serif;
-    color: #f1f8e9;
+    font-family: 'Raleway', sans-serif;
+    color: #A3C9A8;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     position: absolute;
     top: 50%;
@@ -64,43 +65,3 @@ header a {
     }
 }
 
-/* effet du vent */
-.wind {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.particle {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    animation: drift 10s infinite ease-in-out;
-    opacity: 0;
-}
-
-/* particules qui flottent */
-@keyframes drift {
-    0% {
-        transform: translateY(0) translateX(0) scale(0.5);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-500px) translateX(300px) scale(1);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(-1000px) translateX(600px) scale(0.5);
-        opacity: 0;
-    }
-}
