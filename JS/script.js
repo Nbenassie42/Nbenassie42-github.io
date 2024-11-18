@@ -1,8 +1,6 @@
-document.querySelectorAll('.box').forEach(box => {
-    box.addEventListener('mouseenter', () => {
-        box.querySelector('.banner').style.display = 'flex';
-    });
-    box.addEventListener('mouseleave', () => {
-        box.querySelector('.banner').style.display = 'none';
-    });
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const opacity = Math.min(scrollPosition / maxScroll, 1);
+    document.body.style.setProperty('--scroll-opacity', opacity);
 });
