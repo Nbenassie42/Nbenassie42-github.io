@@ -1,19 +1,39 @@
 body {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1)), url("../Images/body-backgound.jpg");
-        background-size: cover;
-        background-position: top;
-        background-repeat: no-repeat;
-        color: #ff0000;
-        font-family: 'Orbitron', sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        min-height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1)), url("../Images/body-backgound.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Make the background fixed */
+    color: #ff0000;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    position: relative;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../Images/sky-red.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    z-index: -1; /* Ensure it is behind other content */
+}
+
+body::before {
+    opacity: var(--scroll-opacity, 0);
+}
 header {
     width: 100%;
     height: 120px;
@@ -85,64 +105,49 @@ nav ul li a:hover {
     max-width: 600px;
     transition: transform 0.3s ease-in-out;
 }
-.box1::after {
+.box::after {
     content: "";
     position: absolute;
     top: 50%;
     right: -50px;
-    transform: translateY(-50%) scale(0);
-    width: 300px;
-    height: 300px;
-    /*background: url("../Images/campagne.png") no-repeat center center;*/
-    background-size: contain;
+    transform: translateY(-50%) scale(0.5); /* Initial smaller scale */
     transition: transform 0.3s ease-in-out;
     z-index: 10;
+    opacity: 0.4; /* High transparency */
+}
+
+.box1::after {
+    width: 150px; /* Adjusted size */
+    height: 150px;
+    background: url("../Images/") no-repeat center center;
+    background-size: contain;
 }
 
 .box2::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%) scale(0);
-    width: 600px;
+    width: 600px; /* Adjusted size */
     height: 600px;
     background: url("../Images/MioZyu.png") no-repeat center center;
     background-size: contain;
-    transition: transform 0.3s ease-in-out;
-    z-index: 10;
 }
 
 .box3::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%) scale(0);
-    width: 600px;
+    width: 600px; /* Adjusted size */
     height: 600px;
     background: url("../Images/Perso_Reaper.png") no-repeat center center;
     background-size: contain;
-    transition: transform 0.3s ease-in-out;
-    z-index: 10;
 }
 
 .box4::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%) scale(0);
-    width: 300px;
-    height: 300px;
+    width: 150px; /* Adjusted size */
+    height: 150px;
     background: url("../Images/character4.png") no-repeat center center;
     background-size: contain;
-    transition: transform 0.3s ease-in-out;
-    z-index: 10;
 }
 
 .box:hover::after {
-    transform: translateY(-50%) scale(1);
+    transform: translateY(-50%) scale(1); /* Scale up on hover */
+    opacity: 1; /* Remove transparency on hover */
+
 }
 
 .box:hover::after {
