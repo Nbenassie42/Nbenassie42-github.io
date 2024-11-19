@@ -3,7 +3,7 @@ body {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Make the background fixed */
+    background-attachment: fixed;
     color: #ff0000;
     font-family: 'Orbitron', sans-serif;
     margin: 0;
@@ -27,8 +27,8 @@ body::before {
     background-size: cover;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    pointer-events: none; /* Ensure it doesn't interfere with other elements */
-    z-index: -1; /* Ensure it is behind other content */
+    pointer-events: none;
+    z-index: -1;
 }
 
 body::before {
@@ -37,13 +37,13 @@ body::before {
 header {
     width: 100%;
     height: 120px;
-    background-color: rgba(139, 0, 0, 0.8); /* Darker red color with transparency */
+    background-color: rgba(139, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 6px rgba(255, 0, 0, 0.5);
-    border-bottom: 2px solid rgba(255, 0, 0, 0.8); /* Semi-transparent border */
+    border-bottom: 2px solid rgba(255, 0, 0, 0.8);
 }
 
 header h1 {
@@ -80,21 +80,21 @@ nav ul li a:hover {
     color: #ff0000;
 }
 
-.container {
+.containerPresentationBox {
     margin-top: 75px;
     display: flex;
     flex-direction: column;
-    align-items: stretch; /* Ensure boxes stay on their sides */
+    align-items: stretch;
     width: 90%;
     gap: 20px;
 }
 
-.container h2 {
+.containerPresentationBox h2 {
     color: #fff;
     text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000;
 }
 
-.box {
+.boxPresentation {
     margin-bottom: 8vw;
     position: relative;
     background: rgba(0, 0, 0, 0.80);
@@ -105,60 +105,66 @@ nav ul li a:hover {
     max-width: 600px;
     transition: transform 0.3s ease-in-out;
 }
-.box::after {
+.boxPresentation::after {
     content: "";
     position: absolute;
     top: 50%;
     right: -50px;
-    transform: translateY(-50%) scale(0.5); /* Initial smaller scale */
-    transition: transform 0.3s ease-in-out;
+    transform: translateY(-50%) scale(0.5); : transform 0.3s ease-in-out;
     z-index: 10;
-    opacity: 0.4; /* High transparency */
+    opacity: 0.4;
 }
 
 .box1::after {
-    width: 150px; /* Adjusted size */
+    width: 150px;
     height: 150px;
     background: url("../Images/") no-repeat center center;
     background-size: contain;
 }
 
 .box2::after {
-    width: 600px; /* Adjusted size */
+    width: 600px;
     height: 600px;
     background: url("../Images/MioZyu.png") no-repeat center center;
     background-size: contain;
 }
 
 .box3::after {
-    width: 600px; /* Adjusted size */
+    width: 600px;
     height: 600px;
     background: url("../Images/Perso_Reaper.png") no-repeat center center;
     background-size: contain;
 }
 
+.box4{
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 .box4::after {
-    width: 150px; /* Adjusted size */
+    width: 150px;
     height: 150px;
     background: url("../Images/character4.png") no-repeat center center;
     background-size: contain;
 }
 
-.box:hover::after {
-    transform: translateY(-50%) scale(1); /* Scale up on hover */
-    opacity: 1; /* Remove transparency on hover */
+.boxPresentation:hover::after {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
 
 }
 
-.box:hover::after {
+.boxPresentation:hover::after {
     transform: translateY(-50%) scale(1);
 }
 
-.box:hover {
+.boxPresentation:hover {
     transform: scale(1.05);
 }
 
-.box:hover {
+.boxPresentation:hover {
     transform: scale(1.05);
 }
 
@@ -168,5 +174,17 @@ nav ul li a:hover {
 
 .right-box {
     align-self: flex-end;
+}
+
+footer {
+    width: 100%;
+    background: linear-gradient(to top, rgba(47, 0, 0, 0.8), black);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
 }
 
