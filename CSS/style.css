@@ -103,24 +103,19 @@ nav ul li a:hover {
     box-shadow: 0 4px 6px rgba(255, 0, 0, 0.5);
     width: 100%;
     max-width: 600px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .boxPresentation::after {
     content: "";
     position: absolute;
     top: 50%;
     right: -50px;
-    transform: translateY(-50%) scale(0.5); : transform 0.3s ease-in-out;
+    transform: translateY(-50%) scale(0.5);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     z-index: 10;
-    opacity: 0.4;
+    opacity: 0;
 }
 
-.box1::after {
-    width: 150px;
-    height: 150px;
-    background: url("../Images/") no-repeat center center;
-    background-size: contain;
-}
 
 .box2::after {
     width: 600px;
@@ -143,12 +138,6 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
 }
-.box4::after {
-    width: 150px;
-    height: 150px;
-    background: url("../Images/character4.png") no-repeat center center;
-    background-size: contain;
-}
 
 .boxPresentation:hover::after {
     transform: translateY(-50%) scale(1);
@@ -158,10 +147,6 @@ nav ul li a:hover {
 
 .boxPresentation:hover::after {
     transform: translateY(-50%) scale(1);
-}
-
-.boxPresentation:hover {
-    transform: scale(1.05);
 }
 
 .boxPresentation:hover {
